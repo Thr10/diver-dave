@@ -1,8 +1,11 @@
+import classNames from '@/tools/classNames'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+// rootlayout 在src/pages 中不生效，不知道是为什么 https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration#step-1-creating-the-app-directory
+
+// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +18,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className} style={{width: '100vw', height: "100vh"}}>{children}</body>
+    <html lang="en" className='h-screen bg-gray-100'>
+      <body className={classNames("h-screen")}>{children}</body>
     </html>
   )
 }
